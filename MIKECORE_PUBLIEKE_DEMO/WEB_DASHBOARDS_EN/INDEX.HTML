@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MIKECORE FUSION NEXUS v5.0 - Public Demo</title>
+    <style>
+        body { background-color: #0a0f1d; color: #e2e8f0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1e293b; padding-bottom: 15px; margin-bottom: 20px; }
+        .logo { font-size: 24px; font-weight: bold; color: #38bdf8; letter-spacing: 1px; }
+        .status-badge { background-color: #10b981; color: #000; padding: 5px 15px; font-weight: bold; border-radius: 4px; box-shadow: 0 0 10px rgba(16,185,129,0.3); }
+        .nav-bar { display: flex; gap: 15px; background: #111827; padding: 12px 20px; border-radius: 6px; border: 1px solid #1e293b; margin-bottom: 20px; }
+        .nav-bar a { color: #94a3b8; text-decoration: none; font-weight: bold; font-size: 14px; transition: color 0.2s; text-transform: uppercase; letter-spacing: 0.5px; }
+        .nav-bar a.active, .nav-bar a:hover { color: #38bdf8; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .card { background-color: #111827; border: 1px solid #1e293b; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .card h2 { margin-top: 0; color: #94a3b8; font-size: 18px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .metric { font-size: 48px; font-weight: bold; color: #f1f5f9; margin: 10px 0; }
+        .metric-unit { font-size: 18px; color: #64748b; }
+        .btn { background-color: #38bdf8; color: #0f172a; border: none; padding: 12px 24px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: all 0.2s; width: 100%; margin-bottom: 10px; }
+        .btn:hover { background-color: #7dd3fc; box-shadow: 0 0 15px rgba(56,189,248,0.4); }
+        .btn-danger { background-color: #ef4444; color: #fff; }
+        .btn-danger:hover { background-color: #f87171; box-shadow: 0 0 15px rgba(239,68,68,0.4); }
+        #log-console { background-color: #020617; border: 1px solid #1e293b; height: 180px; overflow-y: auto; padding: 10px; font-family: 'Courier New', Courier, monospace; font-size: 13px; color: #34d399; border-radius: 4px; }
+        .log-entry { margin-bottom: 5px; }
+        .progress-bar-container { background-color: #1e293b; height: 20px; border-radius: 10px; overflow: hidden; margin-top: 15px; }
+        .progress-bar { background-color: #38bdf8; width: 85%; height: 100%; transition: width 0.5s ease; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">MIKECORE // FUSION NEXUS <span style="color:#64748b; font-size:14px;">v5.0 PRO DEMO</span></div>
+        <div class="status-badge" id="sys-status">KERNEL ACTIVE</div>
+    </div>
+    <div class="nav-bar">
+        <a href="INDEX.HTML" class="active">Home</a>
+        <a href="DASHBOARD.HTML">Analytics</a>
+        <a href="PIPELINE.HTML">Pipeline</a>
+        <a href="MODULES.HTML">Modules</a>
+        <a href="BLUEPRINT.HTML">Blueprint</a>
+        <a href="DOCS.HTML">Docs</a>
+    </div>
+    <div class="grid">
+        <div class="card">
+            <h2>Core Stability (Centered)</h2>
+            <div class="metric" id="stability-val">98.42 <span class="metric-unit">%</span></div>
+            <p style="color:#64748b; margin:0;">VPU Mesh Network load and synchronization ratio.</p>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="stability-bar" style="width: 98.42%;"></div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Demo Interactive Panel</h2>
+            <button class="btn" onclick="triggerAudit()">Simulate Live Fusion Audit</button>
+            <button class="btn" onclick="injectAgent()">Inject Autonomous AI-Agent</button>
+            <button class="btn btn-danger" onclick="toggleSystem()">Emergency Stop (Failsafe)</button>
+        </div>
+        <div class="card" style="grid-column: span 2;">
+            <h2>System Governance & Audit Log (Live)</h2>
+            <div id="log-console">
+                <div class="log-entry">[07:25:01] BOOT: Dual Kernel Unification successfully initiated...</div>
+                <div class="log-entry">[07:25:02] MESH: Erlang-Python IPC socket bridge operational on port 8080...</div>
+                <div class="log-entry">[07:25:03] AI-OS: Agent mesh network loaded (390 folders verified)...</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        setInterval(function() {
+            if(document.getElementById('sys-status').innerText === "KERNEL ACTIVE") {
+                let baseVal = 98.10;
+                let randomVariation = Math.random() * 0.85;
+                let finalVal = (baseVal + randomVariation).toFixed(2);
+                document.getElementById('stability-val').innerHTML = finalVal + ' <span class="metric-unit">%</span>';
+                document.getElementById('stability-bar').style.width = finalVal + '%';
+                if(Math.random() > 0.7) { addLog("NEXUS", "Automatic data-drift check executed. Status: Normative.", "34d399"); }
+            }
+        }, 1500);
+        function addLog(module, text, color="34d399") {
+            let console = document.getElementById('log-console');
+            let time = new Date().toLocaleTimeString();
+            console.innerHTML += `<div class="log-entry" style="color:#${color}">[${time}] ${module}: ${text}</div>`;
+            console.scrollTop = console.scrollHeight;
+        }
+        function triggerAudit() {
+            addLog("AUDIT", "Manual Fusion Audit started on Dual Kernel...", "38bdf8");
+            setTimeout(() => addLog("AUDIT", "UCAN claims validated. No breach detected.", "38bdf8"), 800);
+            setTimeout(() => addLog("AUDIT", "Audit complete. Integrity score: 100%.", "10b981"), 1600);
+        }
+        function injectAgent() {
+            addLog("AI-AGENT", "Agent injection requested by user...", "a855f7");
+            setTimeout(() => addLog("AI-AGENT", "Virtual agent successfully injected into VPU Sandbox.", "a855f7"), 1000);
+        }
+        function toggleSystem() {
+            let status = document.getElementById('sys-status');
+            if(status.innerText === "KERNEL ACTIVE") {
+                status.innerText = "SAFE MODE / LOCKED";
+                status.style.backgroundColor = "#ef4444";
+                document.getElementById('stability-val').innerHTML = '0.00 <span class="metric-unit">%</span>';
+                document.getElementById('stability-bar').style.width = '0%';
+                addLog("SYSTEM", "FAILSAFE ACTIVE: All processes frozen. Intellectual property locked down.", "ef4444");
+            } else {
+                status.innerText = "KERNEL ACTIVE";
+                status.style.backgroundColor = "#10b981";
+                addLog("SYSTEM", "System successfully rebooted from safe mode.", "10b981");
+            }
+        }
+    </script>
+</body>
+</html>

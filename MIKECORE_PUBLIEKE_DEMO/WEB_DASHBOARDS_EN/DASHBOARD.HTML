@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MIKECORE FUSION NEXUS - Live Analytics</title>
+    <style>
+        body { background-color: #0a0f1d; color: #e2e8f0; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; }
+        .nav { display: flex; gap: 15px; background: #111827; padding: 10px 20px; border-radius: 6px; border: 1px solid #1e293b; margin-bottom: 20px; }
+        .nav a { color: #94a3b8; text-decoration: none; font-weight: bold; font-size: 14px; text-transform: uppercase; }
+        .nav a.active, .nav a:hover { color: #38bdf8; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .card { background-color: #111827; border: 1px solid #1e293b; border-radius: 8px; padding: 20px; text-align: center; }
+        .metric { font-size: 36px; font-weight: bold; color: #38bdf8; margin: 10px 0; }
+        h2 { font-size: 16px; color: #94a3b8; margin: 0; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="INDEX.HTML">Home</a>
+        <a href="DASHBOARD.HTML" class="active">Analytics</a>
+        <a href="PIPELINE.HTML">Pipeline</a>
+        <a href="MODULES.HTML">Modules</a>
+        <a href="BLUEPRINT.HTML">Blueprint</a>
+        <a href="DOCS.HTML">Docs</a>
+    </div>
+    <div class="grid">
+        <div class="card"><h2>VPU Mesh Nodes</h2><div class="metric">390</div><p style="color:#64748b;">Central active directories</p></div>
+        <div class="card"><h2>Scanned Files</h2><div class="metric">1,154</div><p style="color:#64748b;">Total IP integrity checkouts</p></div>
+        <div class="card"><h2>Network Sync Ratio</h2><div class="metric" id="sync">99.98%</div><p style="color:#64748b;">Erlang IPC Bridge Status</p></div>
+    </div>
+    <script>
+        setInterval(() => { document.getElementById('sync').innerText = (99.90 + Math.random() * 0.09).toFixed(2) + '%'; }, 1000);
+    </script>
+</body>
+</html>

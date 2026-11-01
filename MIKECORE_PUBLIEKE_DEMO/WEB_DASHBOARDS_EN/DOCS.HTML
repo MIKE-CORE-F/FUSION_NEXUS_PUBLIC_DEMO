@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MIKECORE FUSION NEXUS - Documentation</title>
+    <style>
+        body { background-color: #0a0f1d; color: #e2e8f0; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; }
+        .nav { display: flex; gap: 15px; background: #111827; padding: 10px 20px; border-radius: 6px; border: 1px solid #1e293b; margin-bottom: 20px; }
+        .nav a { color: #94a3b8; text-decoration: none; font-weight: bold; text-transform: uppercase; }
+        .nav a.active, .nav a:hover { color: #38bdf8; }
+        .docs-content { max-width: 800px; line-height: 1.6; }
+        h2 { color: #38bdf8; }
+        code { background: #1e293b; padding: 2px 6px; border-radius: 4px; font-family: monospace; color: #f1f5f9; }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="INDEX.HTML">Home</a>
+        <a href="DASHBOARD.HTML">Analytics</a>
+        <a href="PIPELINE.HTML">Pipeline</a>
+        <a href="MODULES.HTML">Modules</a>
+        <a href="BLUEPRINT.HTML">Blueprint</a>
+        <a href="DOCS.HTML" class="active">Docs</a>
+    </div>
+    <div class="docs-content">
+        <h2>Public API & Governance Core Guide</h2>
+        <p>Welcome to the public-facing documentation for MIKECORE Fusion Nexus v5.0.</p>
+        <h3>System Handshake Initialization</h3>
+        <p>To safely bridge client application extensions without revealing underlying network data layers, execute the secure connection via: <code>init_public_mesh_handshake()</code>.</p>
+        <p>This validates incoming cryptographically isolated <i>UCAN claims</i> while completely obscuring real infrastructure endpoints.</p>
+    </div>
+</body>
+</html>
