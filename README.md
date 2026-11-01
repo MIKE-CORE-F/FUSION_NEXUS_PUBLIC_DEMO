@@ -2,6 +2,8 @@
 
 Welcome to the public-facing repository for the **MIKECORE Fusion Nexus v5.0 Framework**. This repository houses the interactive frontend layer designed to demonstrate our system observability, governance pipelines, and distributed mesh telemetry.
 
+👉 **Live Demo:** [Click here to view the Interactive Dashboard](https://github.io)
+
 ---
 
 ## 🔒 Security & Intellectual Property Protocol
@@ -41,6 +43,8 @@ Through the web application dashboards, you can interact with and explore our hi
 
 ## ✉️ Contact & Collaboration
 
-We are currently engineering the future of high-throughput autonomous systems and modular dual-kernel infrastructure. If you are interested in our system design, scalability benchmarks, or custom deployment configurations, feel free to reach out via our official communication channels.
+We are currently engineering the future of high-throughput autonomous systems and modular dual-kernel infrastructure. If you are interested in our system design, scalability benchmarks, or custom deployment configurations, feel free to reach out to us.
+
+📧 **Official Email:** [mikecore.public@gmail.com](mailto:mikecore.public@gmail.com)
 
 *Copyright © 2026 MIKE-CORE Ecosystems. All Rights Reserved.*
